@@ -8,12 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class ClickService implements ClickServiceInterface
 {
-    protected ClickRepositoryInterface $clickRepository;
-
-    public function __construct(ClickRepositoryInterface $clickRepository)
-    {
-        $this->clickRepository = $clickRepository;
-    }
+    public function __construct(private ClickRepositoryInterface $clickRepository) {}
 
     public function trackClick(array $data): void
     {
