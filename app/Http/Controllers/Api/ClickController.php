@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClickRequest;
 use App\Http\Resources\ClickResource;
-use App\Services\ClickService;
+use App\Interfaces\Services\ClickServiceInterface;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ClickController extends Controller
 {
-    public function __construct(private ClickService $clickService) {}
+    public function __construct(private ClickServiceInterface $clickService) {}
 
     public function store(ClickRequest $request): JsonResponse
     {
